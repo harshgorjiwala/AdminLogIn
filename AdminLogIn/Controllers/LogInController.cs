@@ -9,9 +9,17 @@ namespace AdminLogIn.Controllers
     public class LogInController : Controller
     {
         // GET: LogIn
-        public ActionResult Index()
+        public ActionResult Login(LoginModel model, string returnUrl)
         {
-            return View();
+            UsersController uc = new UsersController();
+            if (ModelState.IsValid && uc.UserExists(model) && uc.PasswordValid(model))
+            {
+                FormsAuthentication.SetAuthCookie(model.UserName, false);
+                return View("Dashboard");
+            }
+            // If we got this far, something failed, redisplay form
+            ModelState.AddModelError("", "The user name or password provided is incorrect.");
+            return View(model);
         }
     }
 }
