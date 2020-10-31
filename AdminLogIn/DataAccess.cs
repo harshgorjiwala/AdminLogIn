@@ -11,7 +11,7 @@ namespace AdminLogIn
 {
     public class DataAccess
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myconnection"].ToString());
+        public SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myconnection"].ToString());
 
         public void AddUser(User userobj)
         {
@@ -45,34 +45,48 @@ namespace AdminLogIn
 
         }
 
-        private void BindGridview()
+        public List<User> GetUser()
         {
-            DataTable DT = new DataTable();
+            List<User> usersList = new List<User>();
 
+            SqlCommand cmd = new SqlCommand("SP_getUser", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter sd = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
             try
             {
                 con.Open();
-                string query = "select * from users";
-                SqlCommand cmd = new SqlCommand(query, con);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                adapter.Fill(DT);
-
-                if (DT.Rows.Count > 0)
+                sd.Fill(dt);
+                foreach(DataRow dr in dt.Rows)
                 {
-                    gridview.DataSource = DT;
-                    gridview.DataBind();
+                    usersList.Add(new User
+                    {
+                        id = Convert.ToInt32(dr["id"]),
+                        firstName = Convert.ToString(dr["FirstName"]),
+                        lastName = Convert.ToString(dr["LastName"]),
+                        address = Convert.ToString(dr["Address"]),
+                        city = Convert.ToString(dr["City"]),
+                        province = Convert.ToString(dr["Province"]),
+                        country = Convert.ToString(dr["Country"]),
+                        phoneNumer = Convert.ToString(dr["PhoneNumber"]),
+                        Email = Convert.ToString(dr["Email"]),
+                        Password = Convert.ToString(dr["Password"]),
+                        isAdmin = Convert.ToInt32(dr["isAdmin"])
+
+                    });
                 }
+                return usersList;
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Exception ex)
             {
-                string msg = "Error: ";
-                msg += ex.Message;
-                throw new Exception(msg);
+
+                throw ex;
             }
             finally
             {
                 con.Close();
             }
+
         }
 
 

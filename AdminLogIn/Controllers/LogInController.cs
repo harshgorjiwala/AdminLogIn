@@ -11,7 +11,7 @@ namespace AdminLogIn.Controllers
         // GET: LogIn
         public ActionResult Login(LoginModel model, string returnUrl)
         {
-            UsersController uc = new UsersController();
+            UserController uc = new UserController();
             if (ModelState.IsValid && uc.UserExists(model) && uc.PasswordValid(model))
             {
                 FormsAuthentication.SetAuthCookie(model.UserName, false);

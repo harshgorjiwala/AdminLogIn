@@ -16,6 +16,10 @@ namespace Create_User_Control
         // GET: User
         protected void page_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+
+            return View();
+=======
             string mainconn = ConfigurationManager.ConnectionStrings["Myconnection"].ConnectionString;
             SqlConnection sqlconn = new SqlConnection(mainconn);
             string sqlquery = "select * from ";
@@ -27,6 +31,7 @@ namespace Create_User_Control
             GridView1.DataSource = dt;
             GridView1.DataBind();
             sqlconn.Close();
+>>>>>>> 4534d4c09f39b98cdcc96e329fd2d0f204a8b850
         }
     }
 }
