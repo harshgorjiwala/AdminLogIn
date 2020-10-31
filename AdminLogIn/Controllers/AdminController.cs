@@ -11,9 +11,9 @@ namespace AdminLogIn.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            ViewData["Message"] = "Welcome to ASP.NET MVC!";
-
-            return View();
+            DataAccess data = new DataAccess();
+            ModelState.Clear();
+            return View(data.GetUser());
         }
 
         public ActionResult About()
