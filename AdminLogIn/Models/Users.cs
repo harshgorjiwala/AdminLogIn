@@ -7,7 +7,7 @@ using System.Web;
 
 namespace AdminLogIn.Models
 {
-    public class User : DataAccess
+    public class User
     {
         private string email;
         private string password;
