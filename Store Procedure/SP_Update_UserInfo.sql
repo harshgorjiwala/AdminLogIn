@@ -37,8 +37,6 @@ BEGIN
 		[PhoneNumber] = @PhoneNumber,
 		[Email] = @Email,
 		[Password] = @Password,
-		[Email] = @Email,
-		[Password] = @Password,
 		[isAdmin] = @isAdmin
 
        

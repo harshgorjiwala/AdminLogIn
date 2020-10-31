@@ -33,7 +33,7 @@ BEGIN
         @PhoneNumber = [PhoneNumber],
         @Email = [Email],
         @Password = [Password],
-        @isAdmin = [isAdmin],
+        @isAdmin = [isAdmin]
        
     FROM userInfo
     WHERE Id = @Id
