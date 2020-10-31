@@ -31,8 +31,6 @@ BEGIN
 		[PhoneNumber],
 		[Email],
 		[Password],
-		[Email],
-		[Password],
 		[isAdmin]
     )
     VALUES
@@ -45,8 +43,6 @@ BEGIN
 		@Province,
 		@Country,
 		@PhoneNumber,
-		@Email,
-		@Password,
 		@Email,
 		@Password,
 		 @isAdmin
