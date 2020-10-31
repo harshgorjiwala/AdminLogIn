@@ -148,3 +148,7 @@ E:\Assignment 2\AdminLogIn\AdminLogIn\obj\Debug\AdminLogIn.csprojAssemblyReferen
 E:\Assignment 2\AdminLogIn\AdminLogIn\obj\Debug\AdminLogIn.csproj.CopyComplete
 E:\Assignment 2\AdminLogIn\AdminLogIn\obj\Debug\AdminLogIn.dll
 E:\Assignment 2\AdminLogIn\AdminLogIn\obj\Debug\AdminLogIn.pdb
+C:\Users\divyesh\Source\Repos\AdminLogIn\AdminLogIn\obj\Debug\AdminLogIn.csprojAssemblyReference.cache
+C:\Users\divyesh\Source\Repos\AdminLogIn\AdminLogIn\obj\Debug\AdminLogIn.csproj.CoreCompileInputs.cache
+C:\Users\divyesh\Source\Repos\AdminLogIn\AdminLogIn\obj\Debug\AdminLogIn.dll
+C:\Users\divyesh\Source\Repos\AdminLogIn\AdminLogIn\obj\Debug\AdminLogIn.pdb

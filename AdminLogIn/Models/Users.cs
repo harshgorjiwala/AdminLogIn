@@ -7,30 +7,47 @@ using System.Web;
 
 namespace AdminLogIn.Models
 {
-    public class User
+    public class Users
     {
-        private string email;
-        private string password;
+        [Required]
+        public int id { get; set; }
+        [Required]
+
+        public string firstName { get; set; }
+        [Required]
+        public string lastName { get; set; }
+        [Required]
+        public string address { get; set; }
+        [Required]
+        public string city { get; set; }
+        [Required]
+        public string province { get; set; }
+        [Required]
+        public string country { get; set; }
+        [Required]
+        public string phoneNumer { get; set; }
+        [Required]
+        public int isAdmin { get; set; }
+
 
         [Required(ErrorMessage = "Email is required")]
         [Display(Name = "Please enter Email")]
         public string Email
         {
-            get { return email; }
-            set { email = value; }
+            get;
+            set;
         }
 
         [Required(ErrorMessage = "Password is required")]
         [Display(Name = "Please enter Password")]
         public string Password
         {
-            get { return password; }
-            set { password = value; }
+            get;
+            set;
         }
 
-        
     }
 
-   
+
 
 }
