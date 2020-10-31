@@ -11,7 +11,7 @@ namespace AdminLogIn.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            ViewBag.Message = "Welcome to ASP.NET MVC!";
+            ViewData["Message"] = "Welcome to ASP.NET MVC!";
 
             return View();
         }
